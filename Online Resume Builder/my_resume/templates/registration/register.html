@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %} Sign in {% endblock %}</title>
+  </head>
+  <body>
+    {% block content%}
+    <br />
+    <h2 style="text-align: center">Welcome to Resume-Portfolio Builder</h2>
+
+    <div style="font-weight: 500; font-size: larger; text-align: center; margin-top: 20px">
+      Build up your resume and get a portfolio site
+    </div>
+    <br />
+    <h4 style="text-align: center">Sign Up</h4>
+    <br />
+    <form action="" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <div id="login-btn">
+        <input class="btn btn-secondary" type="submit" value="Sign in" />
+      </div>
+    </form>
+    <br />
+    <h5 style="text-align: center; margin-bottom: 40px">
+      Wealcome Back!! Come Here <a href="{% url 'login' %}">Log in</a>
+    </h5>
+    {% endblock %}
+  </body>
+</html>
